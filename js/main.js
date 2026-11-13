@@ -1,0 +1,44 @@
+// Cores2Drill — small enhancements. The page works fully without this file.
+(function () {
+  // Mobile menu
+  var toggle = document.querySelector('.nav__toggle');
+  var menu = document.getElementById('menu');
+  if (toggle && menu) {
+    var setOpen = function (open) {
+      menu.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', function () {
+      setOpen(!menu.classList.contains('is-open'));
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  }
+
+  // Footer year
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Placeholder links (e.g. Instagram until the real URL is added) shouldn't jump to the top
+  document.querySelectorAll('a[data-placeholder]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); });
+  });
+
+  // Fade sections in as they scroll into view
+  var items = document.querySelectorAll('.card, .feature > *, .gallery > *, .steps li, .contact__item');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+  }
+})();
