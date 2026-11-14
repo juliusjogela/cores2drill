@@ -67,7 +67,7 @@
   }
 
   // Fade sections in as they scroll into view
-  var items = document.querySelectorAll('.card, .feature > *, .gallery > *, .steps li, .contact__item');
+  var items = document.querySelectorAll('.card, .feature > *, .gallery > *, .clips > *, .steps li, .contact__item');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
