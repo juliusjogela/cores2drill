@@ -28,6 +28,26 @@
     a.addEventListener('click', function (e) { e.preventDefault(); });
   });
 
+  // Video clips: play muted while on screen, pause when scrolled away, tap to toggle
+  var clips = document.querySelectorAll('video.clip');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  clips.forEach(function (v) {
+    v.addEventListener('click', function () {
+      if (v.paused) { v.play().catch(function () {}); } else { v.pause(); }
+    });
+  });
+  if ('IntersectionObserver' in window && !reduced) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.play().catch(function () {}); }
+        else { entry.target.pause(); }
+      });
+    }, { threshold: 0.4 });
+    clips.forEach(function (v) { vio.observe(v); });
+  } else {
+    clips.forEach(function (v) { v.controls = true; });
+  }
+
   // Fade sections in as they scroll into view
   var items = document.querySelectorAll('.card, .feature > *, .gallery > *, .steps li, .contact__item');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

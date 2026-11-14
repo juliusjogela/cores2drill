@@ -218,6 +218,18 @@ h3 { font-size: 1.55rem; font-weight: 700; }
   color: var(--text) !important;
 }
 
+.ticks--open { margin: 1.4em 0 2em; }
+.ticks--open li { color: var(--muted); padding-top: 12px; padding-bottom: 12px; }
+.ticks--open li::before { top: 19px; }
+.ticks--open strong { color: var(--text); font-weight: 600; }
+
+/* ---------- Video clips ---------- */
+.clip {
+  width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; display: block;
+  background: #000; border-radius: var(--radius); border: 1px solid var(--line); cursor: pointer;
+}
+.feature > .clip { max-width: 360px; justify-self: center; }
+
 /* ---------- Gallery ---------- */
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
 .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
