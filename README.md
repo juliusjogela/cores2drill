@@ -12,19 +12,16 @@ Plain HTML, CSS and JS. There is no build step: open `index.html` in a browser t
 - `css/style.css`: styles
 - `js/main.js`: mobile menu and scroll animations
 - `images/`: logo, favicon and photos
+- `media/`: video clips and their poster frames
+- `originals/`: full-size photos and videos as received (not committed)
 
-## Placeholders still to fill in
+## Still to fill in
 
-Search `index.html` for `PLACEHOLDER` to find each one.
-
-- Service photos (core drilling, concrete saw)
-- Gallery photos (six tiles)
-- Saw make, model and the kinds of jobs it's for
-- Instagram link in the footer
+- Instagram link in the footer (search `index.html` for `PLACEHOLDER`)
+- Saw make, model, cutting depth and a photo (search for `TODO`)
 - Original logo file (the current one is cropped from a screenshot)
+- Customer reviews, once there are some to quote
 
-To replace a photo placeholder, put the image in `images/` and swap the `<div class="ph">…</div>` for:
+## Adding a gallery photo
 
-```html
-<img src="images/your-photo.jpg" alt="Short description of the photo">
-```
+Put the image in `images/` and copy one of the `<button class="shot">` blocks in the gallery, changing the file name and caption.

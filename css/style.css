@@ -245,6 +245,7 @@ h3 { font-size: 1.55rem; font-weight: 700; }
 .about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
 .about p { color: var(--muted); }
 .small { font-size: 0.95rem; }
+.about__photo { width: 100%; margin-top: 12px; border-radius: var(--radius); border: 1px solid var(--line); }
 
 .steps { counter-reset: step; display: grid; gap: 14px; }
 .steps li {
