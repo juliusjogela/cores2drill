@@ -213,10 +213,12 @@ h3 { font-size: 1.55rem; font-weight: 700; }
 /* ---------- Saw feature ---------- */
 .feature { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
 .feature__text p { color: var(--muted); max-width: 56ch; }
-.note {
-  border-left: 3px solid var(--green); padding: 4px 0 4px 16px; margin: 1.4em 0 1.8em;
-  color: var(--text) !important;
-}
+.saw__inner { display: grid; grid-template-columns: auto 1fr; gap: clamp(28px, 6vw, 80px); align-items: center; }
+.saw__blade { width: clamp(140px, 22vw, 260px); color: var(--green); animation: spin 40s linear infinite; }
+.saw__inner p { color: var(--muted); max-width: 60ch; }
+.saw__inner .eyebrow { color: var(--green); }
+.saw__inner .btn { margin-top: 0.6em; }
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .ticks--open { margin: 1.4em 0 2em; }
 .ticks--open li { color: var(--muted); padding-top: 12px; padding-bottom: 12px; }
@@ -288,6 +290,8 @@ h3 { font-size: 1.55rem; font-weight: 700; }
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero__inner, .feature, .about { grid-template-columns: 1fr; }
+  .saw__inner { grid-template-columns: 1fr; }
+  .saw__blade { width: 120px; }
   .hero__media { max-width: 520px; }
   .hero__badge { right: 8px; }
   .services { grid-template-columns: 1fr; max-width: 560px; }
@@ -296,7 +300,6 @@ h3 { font-size: 1.55rem; font-weight: 700; }
   .facts li:nth-child(n+3) { border-top: 1px solid var(--line); }
   .gallery { grid-template-columns: 1fr 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
-  .ph--tall { aspect-ratio: 4 / 3; }
 }
 
 @media (max-width: 760px) {
@@ -337,5 +340,6 @@ h3 { font-size: 1.55rem; font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .saw__blade { animation: none; }
   .btn, .contact__item { transition: none; }
 }
