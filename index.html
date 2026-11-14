@@ -211,16 +211,33 @@
       <div class="wrap">
         <p class="eyebrow">Our work</p>
         <h2>Recent jobs.</h2>
-        <p class="section__intro">Photos from site are being gathered and will be added here shortly.</p>
+        <p class="section__intro">A few photos from site. Tap any photo to see it full size.</p>
 
-        <!-- PLACEHOLDER: swap each .ph for <img src="images/your-photo.jpg" alt="..."> -->
         <div class="gallery">
-          <div class="ph" role="img" aria-label="Photo placeholder"><span>Photo coming soon</span></div>
-          <div class="ph" role="img" aria-label="Photo placeholder"><span>Photo coming soon</span></div>
-          <div class="ph" role="img" aria-label="Photo placeholder"><span>Photo coming soon</span></div>
-          <div class="ph" role="img" aria-label="Photo placeholder"><span>Photo coming soon</span></div>
-          <div class="ph" role="img" aria-label="Photo placeholder"><span>Photo coming soon</span></div>
-          <div class="ph" role="img" aria-label="Photo placeholder"><span>Photo coming soon</span></div>
+          <button class="shot" type="button" data-full="images/opening-worker.jpg" data-caption="Doorway-sized opening stitch drilled through a thick concrete wall">
+            <img src="images/opening-worker.jpg" width="1050" height="1400" loading="lazy" alt="Doorway-sized opening stitch drilled through a thick concrete wall">
+          </button>
+          <button class="shot" type="button" data-full="images/slab-stitch.jpg" data-caption="L-shaped line of cores stitch drilled through a concrete slab">
+            <img src="images/slab-stitch.jpg" width="1050" height="1400" loading="lazy" alt="L-shaped line of cores stitch drilled through a concrete slab">
+          </button>
+          <button class="shot" type="button" data-full="images/hole-rig-close.jpg" data-caption="Clean cored hole through a house wall with the drill rig still fixed in place">
+            <img src="images/hole-rig-close.jpg" width="1050" height="1400" loading="lazy" alt="Clean cored hole through a house wall with the drill rig still fixed in place">
+          </button>
+          <button class="shot" type="button" data-full="images/site-van.jpg" data-caption="Cores2Drill van on a housing development site">
+            <img src="images/site-van.jpg" width="1200" height="900" loading="lazy" alt="Cores2Drill van on a housing development site">
+          </button>
+          <button class="shot" type="button" data-full="images/core-bits.jpg" data-caption="Pallet of diamond core bits in a range of diameters">
+            <img src="images/core-bits.jpg" width="787" height="1400" loading="lazy" alt="Pallet of diamond core bits in a range of diameters">
+          </button>
+          <button class="shot" type="button" data-full="images/vans-owner.jpg" data-caption="Two Cores2Drill vans outside a trade supplier">
+            <img src="images/vans-owner.jpg" width="1400" height="1050" loading="lazy" alt="Two Cores2Drill vans outside a trade supplier">
+          </button>
+          <button class="shot" type="button" data-full="images/bit-retip.jpg" data-caption="Diamond core bit being re-tipped with new segments">
+            <img src="images/bit-retip.jpg" width="787" height="1400" loading="lazy" alt="Diamond core bit being re-tipped with new segments">
+          </button>
+          <button class="shot" type="button" data-full="images/fleet-yard.jpg" data-caption="Cores2Drill vans loading up in the yard">
+            <img src="images/fleet-yard.jpg" width="1152" height="768" loading="lazy" alt="Cores2Drill vans loading up in the yard">
+          </button>
         </div>
       </div>
     </section>
@@ -305,6 +322,12 @@
     <a href="tel:+353892323315">Call</a>
     <a href="https://wa.me/353892323315?text=Hi%20Cores2Drill%2C%20I%27d%20like%20a%20quote%20for%20a%20job." target="_blank" rel="noopener">WhatsApp</a>
   </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+    <img src="" alt="">
+    <p class="lightbox__caption"></p>
+  </dialog>
 
   <script src="js/main.js"></script>
 </body>

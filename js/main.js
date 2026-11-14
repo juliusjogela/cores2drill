@@ -28,6 +28,24 @@
     a.addEventListener('click', function (e) { e.preventDefault(); });
   });
 
+  // Gallery lightbox
+  var lightbox = document.getElementById('lightbox');
+  if (lightbox && typeof lightbox.showModal === 'function') {
+    var lbImg = lightbox.querySelector('img');
+    var lbCap = lightbox.querySelector('.lightbox__caption');
+    document.querySelectorAll('.shot').forEach(function (shot) {
+      shot.addEventListener('click', function () {
+        lbImg.src = shot.dataset.full;
+        lbImg.alt = shot.dataset.caption || '';
+        lbCap.textContent = shot.dataset.caption || '';
+        lightbox.showModal();
+      });
+    });
+    lightbox.addEventListener('click', function (e) {
+      if (e.target !== lbImg) lightbox.close();
+    });
+  }
+
   // Video clips: play muted while on screen, pause when scrolled away, tap to toggle
   var clips = document.querySelectorAll('video.clip');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
