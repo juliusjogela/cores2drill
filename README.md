@@ -25,3 +25,7 @@ Plain HTML, CSS and JS. There is no build step: open `index.html` in a browser t
 ## Adding a gallery photo
 
 Put the image in `images/` and copy one of the `<button class="shot">` blocks in the gallery, changing the file name and caption.
+
+## Google Ads tracking and cookie banner
+
+`js/consent.js` shows a cookie banner and, only after the visitor presses Accept, loads Google's tag and counts taps on the phone, WhatsApp and email links as Google Ads conversions. It does nothing until it is switched on: paste the `AW-...` conversion ID and the three conversion labels into the `ADS` block at the top of the file. The privacy page is `privacy.html`.

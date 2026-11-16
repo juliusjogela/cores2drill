@@ -284,7 +284,25 @@ h3 { font-size: 1.55rem; font-weight: 700; }
 .footer__links { display: grid; gap: 8px; align-content: start; }
 .footer__links a { color: var(--muted); text-decoration: none; }
 .footer__links a:hover { color: var(--green); }
-.footer__legal { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); color: #6f786e; font-size: 0.88rem; }
+.footer__legal { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); color: #6f786e; font-size: 0.88rem;; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.footer__legal-links { display: flex; gap: 20px; }
+.footer__legal a, .linkbtn { color: #8d968c; text-decoration: none; }
+.footer__legal a:hover, .linkbtn:hover { color: var(--green); }
+.linkbtn { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+.linkbtn[hidden] { display: none; }
+
+/* ---------- Cookie banner ---------- */
+.consent {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  background: var(--panel); border-top: 1px solid var(--line);
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.5);
+}
+.consent[hidden] { display: none; }
+.consent__inner { display: flex; align-items: center; justify-content: space-between; gap: 14px 28px; padding-block: 16px; flex-wrap: wrap; }
+.consent p { margin: 0; color: var(--muted); font-size: 0.97rem; max-width: 62ch; }
+.consent p a { color: var(--text); }
+.consent__buttons { display: flex; gap: 10px; }
+.consent__btn { min-width: 120px; justify-content: center; }
 
 /* ---------- Mobile call bar ---------- */
 .callbar { display: none; }
@@ -335,6 +353,9 @@ h3 { font-size: 1.55rem; font-weight: 700; }
   .callbar a + a { background: var(--panel); color: var(--text); }
 
   .hero__cta .btn { flex: 1 1 100%; }
+  .consent { bottom: 60px; }
+  .consent__buttons { width: 100%; }
+  .consent__btn { flex: 1 1 0; }
 }
 
 @media (max-width: 480px) {
