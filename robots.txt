@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cores2drill.ie/sitemap.xml

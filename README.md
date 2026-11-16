@@ -2,7 +2,7 @@
 
 Website for Cores2Drill, a diamond core drilling and concrete sawing subcontractor based in Galway and working nationwide.
 
-Live preview: https://juliusjogela.github.io/cores2drill/
+Live site: https://cores2drill.ie/
 
 ## Structure
 
