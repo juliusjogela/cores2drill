@@ -218,6 +218,8 @@ h3 { font-size: 1.55rem; font-weight: 700; }
 .feature > .clip { max-width: 360px; justify-self: center; }
 
 .subhead { margin: 56px 0 0; font-size: 1.7rem; }
+.more-work { margin-top: 28px; text-align: center; }
+.more-work .btn { white-space: normal; text-align: center; }
 .clips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; max-width: 860px; }
 
 /* ---------- Gallery ---------- */
